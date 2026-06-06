@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 unsigned int setBits(unsigned int reg, unsigned char position, unsigned char len);
+unsigned int setBitsEasily(unsigned int reg, unsigned char position, unsigned char len);
 void printIntBinary(unsigned int num);
 
 int main()
@@ -20,7 +21,7 @@ int main()
     scanf("%hhu",&lenght);
 
     printIntBinary(num);
-    unsigned int value = setBits(num, position, lenght);
+    unsigned int value = setBitsEasily(num, position, lenght);
     printIntBinary(value);
 }
 
@@ -29,6 +30,16 @@ unsigned int setBits(unsigned int reg, unsigned char position, unsigned char len
     unsigned int bitMask = 0xFFFFFFFF;
     bitMask = bitMask << len;
     bitMask = ~bitMask;
+    bitMask = bitMask << position;
+    reg = reg | bitMask;
+
+    return reg;
+}
+
+unsigned int setBitsEasily(unsigned int reg, unsigned char position, unsigned char len)
+{
+    unsigned int bitMask = (1 << len) - 1;
+    printIntBinary(bitMask);
     bitMask = bitMask << position;
     reg = reg | bitMask;
 
