@@ -41,8 +41,9 @@ void printIntBinary(uint32_t num)
     for(int i = 31; i >= 0 ; i--)
     {
         bitMask = num >> i;
-        // if(i % 8 == 0 && i != 0) printf(" ");
         printf("%u", bitMask & 1);
+        if(i % 8 == 0) printf(" ");
+
     }
     printf("\n");
 }
