@@ -39,7 +39,6 @@ unsigned int setBits(unsigned int reg, unsigned char position, unsigned char len
 unsigned int setBitsEasily(unsigned int reg, unsigned char position, unsigned char len)
 {
     unsigned int bitMask = (1 << len) - 1;
-    printIntBinary(bitMask);
     bitMask = bitMask << position;
     reg = reg | bitMask;
 
