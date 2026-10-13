@@ -19,4 +19,5 @@ int main()
     printf("blank spaces count : %d\n",blankcount);
     printf("tab count : %d\n",tabcount);
     printf("line count : %d\n",lc);
+    printf("EOF : %d\n",EOF);
 }
